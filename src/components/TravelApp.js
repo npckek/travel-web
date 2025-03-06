@@ -103,7 +103,7 @@ const TravelApp = () => {
         <div className="p-4 max-w-2xl mx-auto text-text">
             <Header/>
             <h2 className="text-xl font-bold mt-4">Добавить путешествие</h2>
-            <input className="border border-border bg-block p-2 w-full mb-2" name="location" placeholder="Местоположение" value={newTravel.location} onChange={(e) => setNewTravel({ ...newTravel, location: e.target.value })} />
+            <input className="border border-border bg-block p-2 w-full mb-2"  name="location" placeholder="Местоположение" value={newTravel.location} onChange={(e) => setNewTravel({ ...newTravel, location: e.target.value })} />
             <input className="border border-border bg-block p-2 w-full mb-2" name="cost" placeholder="Стоимость" value={newTravel.cost} onChange={(e) => setNewTravel({ ...newTravel, cost: e.target.value })} />
             <textarea className="border border-border bg-block p-2 w-full mb-2" name="description" placeholder="Описание" value={newTravel.description} onChange={(e) => setNewTravel({ ...newTravel, description: e.target.value })} />
             <div className='flex flex-col p-4'>

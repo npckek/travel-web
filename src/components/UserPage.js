@@ -27,10 +27,16 @@ const UserPage = () => {
                     <div key={travel.id} className="border border-border bg-block p-2 mb-2">
                         <p>Местоположение: {travel.location}</p>
                         <p>Стоимость: {travel.cost}</p>
+                        <p>Описание: {travel.description}</p>
                         <p>Удобство: {travel.convenience}</p>
                         <p>Безопасность: {travel.safety}</p>
                         <p>Населенность: {travel.population}</p>
                         <p>Растительность: {travel.greenery}</p>
+                        {travel.points.map((point, index) => (
+                            <p key={index}>
+                                Точка {index + 1}: Город: {point.city}, Страна: {point.country}
+                            </p>
+                        ))}
                     </div>
                 ))
             ) : (

@@ -23,7 +23,7 @@ const Login = () => {
             alert("Login successful!");
 
             setTimeout(() => {
-                navigate("/feed");
+                navigate("/");
             }, 1000);
 
         } else {
@@ -66,7 +66,7 @@ const Login = () => {
                     Войти
                 </button>
             </form>
-            <Link to="/" className=' flex justify-center py-2 px-4 text-text  '>
+            <Link to="/register" className=' flex justify-center py-2 px-4 text-text  '>
                 <button aria-label="register" > Ещё нет аккаунта?</button>
             </Link>
         </div>

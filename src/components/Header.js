@@ -24,7 +24,7 @@ const Header = () => {
     };
 
     return (
-        <div className="p-4 flex justify-between">
+        <div className="flex justify-between">
             <div>
                 {currentUser ? (
                     <Link to={`/user/${currentUser.name}`} className='text-text text-xl font-bold'>Мой профиль</Link>
@@ -44,7 +44,7 @@ const Header = () => {
                 ) : (
                     <div className='flex justify-between text-text text-xl font-bold'>
                         <Link to={'/login'} className='pr-4'>Войти</Link>
-                        <Link to={'/reg'}>Зарегистрироваться</Link>
+                        <Link to={'/register'}>Зарегистрироваться</Link>
                     </div>
                 )}
             </div>
