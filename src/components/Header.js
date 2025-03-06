@@ -6,7 +6,6 @@ const Header = () => {
     const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
-        // Инициализация состояния пользователя из localStorage или другого источника
         const storedUser = localStorage.getItem("currentUser");
         if (storedUser) {
             setCurrentUser(JSON.parse(storedUser));
@@ -14,7 +13,6 @@ const Header = () => {
     }, []);
 
     const logout = () => {
-        // Очистка состояния пользователя и localStorage
         setCurrentUser(null);
         localStorage.removeItem("currentUser");
     };

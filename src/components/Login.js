@@ -1,12 +1,20 @@
-import React, {useCallback, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import React, { useEffect, useCallback, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const [currentUser, setCurrentUser] = useState('');
+    const [currentUser, setCurrentUser] = useState(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("currentUser");
+        if (storedUser) {
+            setCurrentUser(JSON.parse(storedUser));
+            navigate("/");
+        }
+    }, [navigate]);
 
     const updateCurrentUser = useCallback((newUser) => {
         setCurrentUser(newUser);
@@ -30,7 +38,6 @@ const Login = () => {
             setError("Invalid email or password!");
         }
     }, [email, password, navigate, updateCurrentUser]);
-
 
     return (
         <div className="max-w-sm mx-auto">
@@ -66,11 +73,11 @@ const Login = () => {
                     Войти
                 </button>
             </form>
-            <Link to="/register" className=' flex justify-center py-2 px-4 text-text  '>
-                <button aria-label="register" > Ещё нет аккаунта?</button>
+            <Link to="/register" className='flex justify-center py-2 px-4 text-text'>
+                <button aria-label="register">Ещё нет аккаунта?</button>
             </Link>
         </div>
-    )
+    );
 };
 
 export default Login;
